@@ -1,3 +1,9 @@
+/*==================================================
+/routes/index.js
+
+It defines all the routes used by the Express application.
+==================================================*/
+
 // Import Express module
 import express from 'express';
 

@@ -1,3 +1,9 @@
+/*==================================================
+/routes/Users.js
+
+It defines all the User-related routes.
+==================================================*/
+
 // Import Express module
 import express from 'express';
 
@@ -11,13 +17,11 @@ import { signIn, signUp } from '../controllers/User.js';
 import auth from '../middleware/auth.js';
 
 
-
 /* SIGN IN */
 router.post("/signin", signIn);
 
 /* SIGN UP */
 router.post("/signup", signUp);
-
 
 
 // Export router, so that it can be imported to construct the apiRouter (server.js)

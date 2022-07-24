@@ -1,3 +1,11 @@
+/*==================================================
+/server.js
+
+This is the top-level (main) file for the server application.
+It is the first file to be called when starting the server application.
+It initiates all required parts of server application such as Express, routes, database, etc.
+==================================================*/
+
 import dotenv from 'dotenv';
 dotenv.config();
 

@@ -1,3 +1,9 @@
+/*==================================================
+/routes/Photos.js
+
+It defines all the Photo-related routes.
+==================================================*/
+
 // Import Express module
 import express from 'express';
 
@@ -28,7 +34,6 @@ router.patch("/:id", auth, ctrs.updatePhoto);
 
 /* DELETE PHOTO */
 router.delete("/:id", auth, ctrs.deletePhoto);
-
 
 
 // Export router, so that it can be imported to construct the apiRouter (server.js)
