@@ -23,7 +23,7 @@ export const signIn = ash(async (req, res) => {
     const authenticatePassword = await bcrypt.compare(password, existingUser.password); // If user is found, verify login information
     if (!authenticatePassword) return res.status(400).json({message: "Incorrect email/password combination"}); // Send error if verification failed
 
-    const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, process.env.JWT_SECRET, { expiresIn: "1h" }); // JWT_SECRET can be set in .env file
 
     res.status(200).json({ result: existingUser, token }); // User is successfully logged in
 });
