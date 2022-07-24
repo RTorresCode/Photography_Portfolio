@@ -1,5 +1,5 @@
 /*==================================================
-/routes/Users.js
+server/routes/Users.js
 
 It defines all the User-related routes.
 ==================================================*/

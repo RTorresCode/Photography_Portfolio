@@ -1,5 +1,5 @@
 /*==================================================
-/routes/Photos.js
+server/routes/Photos.js
 
 It defines all the Photo-related routes.
 ==================================================*/
