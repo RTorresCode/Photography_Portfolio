@@ -1,3 +1,10 @@
+/*==================================================
+server/database/models/Photo.js
+
+It defines the Photo model for the database.
+==================================================*/
+
+// Import mongoose module (MongoDB)
 import mongoose from 'mongoose';
 
 const photoSchema = mongoose.Schema({
@@ -14,4 +21,5 @@ const photoSchema = mongoose.Schema({
 
 const Photo = mongoose.model("Photo", photoSchema);
 
+// Export Photo model
 export default Photo;

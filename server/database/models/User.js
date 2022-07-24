@@ -1,3 +1,10 @@
+/*==================================================
+server/database/models/User.js
+
+It defines the User model for the database.
+==================================================*/
+
+// Import mongoose module (MongoDB)
 import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema({
@@ -7,4 +14,5 @@ const userSchema = mongoose.Schema({
     id: { type: String }
 });
 
+// Export User model
 export default mongoose.model("User", userSchema);

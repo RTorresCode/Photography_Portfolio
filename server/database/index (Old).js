@@ -1,3 +1,7 @@
+/*==================================================
+File was part of original postgres db implementation. It is now obselete.
+==================================================*/
+
 const db = require('./db');  // Database instance
 
 require('../database/models');  // Export models

@@ -1,3 +1,7 @@
+/*==================================================
+File was part of original postgres db implementation. It is now obselete.
+==================================================*/
+
 // Import module dependencies
 const Sequelize = require('sequelize');  // Import Sequelize
 const { dbName, dbUser, dbPwd } = require('./utils/configDB');  // Import database name, username, password
