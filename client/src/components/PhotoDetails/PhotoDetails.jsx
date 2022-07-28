@@ -16,6 +16,7 @@ import { getPhoto, getPhotosBySearch } from '../../actions/Photos';
 import useStyles from './styles';
 
 const PhotoDetails = () => {
+
     // Initialize state and React hooks
     const { photo, photos, isLoading } = useSelector((state) => state.Photos);
     const dispatch = useDispatch();

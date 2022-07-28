@@ -17,6 +17,7 @@ import { deletePhoto } from '../../../actions/Photos';
 
 
 const Photo = ({ photo, setCurrentId }) => {
+
     // Initialize state and React hooks
     const classes = useStyles();
     const dispatch = useDispatch();

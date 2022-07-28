@@ -13,6 +13,7 @@ import useStyles from './styles';
 import Socials from '../Socials/Socials';
 
 const Footer = () => {
+
     const classes = useStyles();
 
     return (

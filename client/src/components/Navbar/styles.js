@@ -12,13 +12,12 @@ export default makeStyles((theme) => ({
         padding: '10px 50px',
     },
     heading: {
-        color: 'rgba(0,183,255, 1)',
-        textDecoration: 'none',
-        alignItems: 'center',
-        textAlign: 'center',
+        marginRight: '20px',
+        cursor: 'pointer',
     },
     image: {
-        marginLeft: '15px',
+        marginRight: 'auto',
+        cursor: 'pointer',
     },
     toolbar: {
         display: 'flex',
@@ -32,10 +31,6 @@ export default makeStyles((theme) => ({
         width: '300px',
     },
     userName: {
-        display: 'flex',
-        alignItems: 'center',
-    },
-    brandContainer: {
         display: 'flex',
         alignItems: 'center',
     },

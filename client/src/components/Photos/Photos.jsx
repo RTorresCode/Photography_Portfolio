@@ -13,6 +13,7 @@ import useStyles from './styles';
 
 
 const Photos = ({ setCurrentId }) => {
+
     const classes = useStyles();
     const { photos, isLoading } = useSelector((state) => state.Photos); // Initialize state
 

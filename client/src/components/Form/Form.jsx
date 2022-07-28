@@ -15,6 +15,7 @@ import useStyles from './styles';
 import { addPhoto, updatePhoto } from '../../actions/Photos';
 
 const Form = ({ currentId, setCurrentId }) => {
+
     // Initialize states and React hooks
     const navigate = useNavigate();
     const [photoData, setPhotoData] = useState({

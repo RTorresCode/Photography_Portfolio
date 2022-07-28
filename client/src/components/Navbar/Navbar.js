@@ -6,15 +6,17 @@ It constructs a React component to display the navbar and is responsible for sta
 
 // Import modules
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { AppBar, Typography, Toolbar, Button, Avatar } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 import useStyles from './styles';
-import logo from '../../images/logos/cat.jpg';
+import logoPic from '../../images/logos/pexels-pixabay-414781.jpg'; // Image downloaded from Pexels.com
+import logo from '../../images/logos/logo.jpg';
 
 const Navbar = () => {
+
     // Initialize state and React hooks
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -46,8 +48,8 @@ const Navbar = () => {
 
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
-            <img className={classes.image} src={logo} alt="logo" height="60" />
-            <Typography component={Link} to="/" className={classes.heading} variant="h3" align="center">SV Photography</Typography>
+            <img className={classes.heading} src={logo} alt="name" onClick={() => navigate("/")} />
+            <img className={classes.image} src={logoPic} alt="logo" height="60" onClick={() => navigate("/")} />
             {user ? (
                 <Toolbar className={classes.toolbar}>
                     <div className={classes.profile}>

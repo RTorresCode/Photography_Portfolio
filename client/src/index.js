@@ -20,7 +20,7 @@ const container = document.getElementById("root");
 
 const root = createRoot(container);
 
-// Render App
+// Render App and create state store
 root.render(
     <Provider store={store}>
         <App />

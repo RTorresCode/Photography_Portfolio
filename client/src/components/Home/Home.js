@@ -23,6 +23,7 @@ function useQuery() {
 };
 
 const Home = () => {
+
     // Initialize states and React hooks
     const [currentId, setCurrentId] = useState(null);
     const [search, setSearch] = useState("");

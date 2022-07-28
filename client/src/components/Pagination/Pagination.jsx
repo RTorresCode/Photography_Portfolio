@@ -15,6 +15,7 @@ import { getPhotos } from '../../actions/Photos';
 import useStyles from './styles';
 
 const Paginate = ({ page }) => {
+
     // Initialize state and React hooks
     const { numberOfPages } = useSelector((state) => state.Photos);
     const classes = useStyles();
