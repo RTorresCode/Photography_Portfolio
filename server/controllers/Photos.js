@@ -1,5 +1,5 @@
 /*==================================================
-server/controllers/Photos.js
+/server/controllers/Photos.js
 
 Controls all of the Photo actions a User can take when using the backend API.
 Gets imported and used by routes/Photos.js

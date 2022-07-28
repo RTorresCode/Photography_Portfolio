@@ -1,5 +1,5 @@
 /*==================================================
-server/controllers/User.js
+/server/controllers/User.js
 
 Controls all of the actions a User can take when using the backend API.
 Gets imported and used by routes/Users.js

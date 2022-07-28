@@ -1,5 +1,5 @@
 /*==================================================
-server/database/models/Photo.js
+/server/database/models/Photo.js
 
 It defines the Photo model for the database.
 ==================================================*/

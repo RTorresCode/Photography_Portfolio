@@ -1,5 +1,5 @@
 /*==================================================
-server/database/models/User.js
+/server/database/models/User.js
 
 It defines the User model for the database.
 ==================================================*/

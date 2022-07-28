@@ -1,5 +1,5 @@
 /*==================================================
-server/middleware/auth.js
+/server/middleware/auth.js
 
 It provides the backend with authorization through JSON Web Tokens (JWT).
 ==================================================*/

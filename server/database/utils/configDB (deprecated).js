@@ -1,5 +1,5 @@
 /*==================================================
-File was part of original postgres db implementation. It is now obselete.
+File was part of original postgres db implementation. It is now deprecated.
 ==================================================*/
 
 // Declare the variables for database name, username, and password.

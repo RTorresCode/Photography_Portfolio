@@ -1,5 +1,5 @@
 /*==================================================
-server/server.js
+/server/server.js
 
 This is the top-level (main) file for the server application.
 It is the first file to be called when starting the server application.
