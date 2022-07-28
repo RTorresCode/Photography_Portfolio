@@ -24,15 +24,15 @@ const PhotoDetails = () => {
     const classes = useStyles();
     const { id } = useParams();
 
-    // Gets the current photo's database ID number
+    // Gets the current photo based on its database ID number
     useEffect(() => {
         dispatch(getPhoto(id));
-    }, [id]);
+    }, [id, dispatch]);
 
-    // Queries the database based on User input
+    // Queries the database to search for photos that share any tags with the current photo
     useEffect(() => {
         dispatch(getPhotosBySearch({search: "none", tags: photo?.tags.join(",")}));
-    }, [photo]);
+    }, [photo, dispatch]);
 
     // If no such photo exists in the database, return null
     if (!photo) return null;
@@ -46,7 +46,7 @@ const PhotoDetails = () => {
         );
     };
 
-    // Filter photos in database by tag
+    // Filter recommended photos so the current photo isn't displayed
     const recommendedPhotos = photos.filter(({ _id }) => _id !== photo._id);
 
     // If User clicks on a new photo's card, navigates User to that photo's details page
@@ -77,7 +77,7 @@ const PhotoDetails = () => {
                             <div key={_id} style={{ margin: "20px", cursor: "pointer" }} onClick={() => openPhoto(_id)}>
                                 <Typography gutterBottom variant="h6">{title}</Typography>
                                 <Typography gutterBottom variant="subtitle2">{caption}</Typography>
-                                <img src={selectedFile} width="200px" />
+                                <img src={selectedFile} alt={title} width="200px" />
                             </div>
                         ))}
                     </div>
@@ -86,27 +86,6 @@ const PhotoDetails = () => {
                 <div></div>
             )}
         </Paper>
-
-
-        //<Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
-        //    <div className={classes.card}>
-        //        <div className={classes.section}>
-        //            <Typography variant="h3" component="h2">{photo.title}</Typography>
-        //            <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{photo.tags.map((tag) => `#${tag} `)}</Typography>
-        //            <Typography gutterBottom variant="body1" component="p">{photo.caption}</Typography>
-        //            <Typography variant="h6">Created by: me</Typography>
-        //            <Typography variant="body1">{moment(photo.createdAt).fromNow()}</Typography>
-        //            <Divider style={{ margin: "20px 0" }} />
-        //            <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
-        //            <Divider style={{ margin: "20px 0" }} />
-        //            <Typography variant="body1"><strong>Comments - coming soon!</strong></Typography>
-        //            <Divider style={{ margin: "20px 0" }} />
-        //        </div>
-        //        <div className={classes.imageSection}>
-        //            <img className={classes.media} src={photo.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={photo.title} />
-        //        </div>
-        //    </div>
-        //</Paper>
     )
 };
 

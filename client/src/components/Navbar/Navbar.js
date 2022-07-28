@@ -8,11 +8,11 @@ It constructs a React component to display the navbar and is responsible for sta
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AppBar, Typography, Toolbar, Button, Avatar } from '@material-ui/core';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 import useStyles from './styles';
-import logoPic from '../../images/logos/pexels-pixabay-414781.jpg'; // Image downloaded from Pexels.com
 import logo from '../../images/logos/logo.jpg';
 
 const Navbar = () => {
@@ -49,7 +49,7 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <img className={classes.heading} src={logo} alt="name" onClick={() => navigate("/")} />
-            <img className={classes.image} src={logoPic} alt="logo" height="60" onClick={() => navigate("/")} />
+            <CameraAltIcon className={classes.image} size="lg" alt="logo" onClick={() => navigate("/")} />
             {user ? (
                 <Toolbar className={classes.toolbar}>
                     <div className={classes.profile}>

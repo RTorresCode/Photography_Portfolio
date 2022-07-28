@@ -28,7 +28,6 @@ const Home = () => {
     const [currentId, setCurrentId] = useState(null);
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
-    const [photos, setPhotos] = useState()
     const classes = useStyles();
     const dispatch = useDispatch();
     const query = useQuery();

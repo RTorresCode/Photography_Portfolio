@@ -24,7 +24,7 @@ const Paginate = ({ page }) => {
     // Returns the proper set of photos, depending on the current page
     useEffect(() => {
         if (page) dispatch(getPhotos(page));
-    }, [page]);
+    }, [page, dispatch]);
 
     return (
         <Pagination
