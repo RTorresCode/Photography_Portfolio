@@ -8,7 +8,7 @@
 
 ## How to Start
 <br />
-The frontend client and backend server need to be ran independently
+The frontend client and backend server need to be ran independently of one another
 
 ### \* =============== IMPORTANT =============== *
 Before attempting to run the backend server:
