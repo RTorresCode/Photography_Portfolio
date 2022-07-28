@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Photos/Photo/Photo.jsx
+
+It constructs a React component to display a single photo and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -10,21 +17,24 @@ import { deletePhoto } from '../../../actions/Photos';
 
 
 const Photo = ({ photo, setCurrentId }) => {
+    // Initialize state and React hooks
     const classes = useStyles();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("profile"));
 
+    // Function called when User attempts to delete a photo from the database
     const handleDelete = () => {
         try {
-            dispatch(deletePhoto(photo._id));
+            dispatch(deletePhoto(photo._id)); // Dispatch action to redux
         } catch (err) {
             console.log(err.message);
         };
 
-        navigate("/");
+        navigate("/"); // Navigate User to Home page
     };
 
+    // Navigates to a single photo's details page when a User clicks that photo's card
     const openPhoto = () => navigate(`/photos/${photo._id}`);
 
     return (

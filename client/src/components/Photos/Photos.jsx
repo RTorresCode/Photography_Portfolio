@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Photos/Photos.jsx
+
+It constructs a React component to display photos and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React from 'react';
 import { Grid, CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
@@ -7,9 +14,9 @@ import useStyles from './styles';
 
 const Photos = ({ setCurrentId }) => {
     const classes = useStyles();
-    const { photos, isLoading } = useSelector((state) => state.Photos);
+    const { photos, isLoading } = useSelector((state) => state.Photos); // Initialize state
 
-    if (!photos.length && !isLoading) return "No Photos";
+    if (!photos.length && !isLoading) return "No Photos"; // Executes only if there are no photos found
 
     return (
         isLoading ? <CircularProgress /> : (

@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/App.jsx
+
+Contains the client-side routes
+================================================== */
+
+// Import modules
 import React from 'react';
 import { Container } from '@material-ui/core';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -9,8 +16,9 @@ import Auth from './components/Auth/Auth';
 import PhotoDetails from './components/PhotoDetails/PhotoDetails';
 
 const App = () => {
-    const user = JSON.parse(localStorage.getItem("profile"));
+    const user = JSON.parse(localStorage.getItem("profile")); // Get User information from localStorage, if it exists
 
+    // Client-side routes are stored inside the BrowserRouter
     return (
         <BrowserRouter>
             <Container maxWidth="xl">

@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Form/Form.jsx
+
+It constructs a React component to display the photo edit/upload form and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
@@ -8,6 +15,7 @@ import useStyles from './styles';
 import { addPhoto, updatePhoto } from '../../actions/Photos';
 
 const Form = ({ currentId, setCurrentId }) => {
+    // Initialize states and React hooks
     const navigate = useNavigate();
     const [photoData, setPhotoData] = useState({
         title: "", caption: "", tags: "", selectedFile: ""
@@ -19,10 +27,12 @@ const Form = ({ currentId, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
+    // If a photo is selected to be edited, automatically sets the state to have that selected photo's data
     useEffect(() => {
         if (photo) setPhotoData(photo);
     }, [photo]);
 
+    // Function called when User submits the photo edit/upload form
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -35,6 +45,7 @@ const Form = ({ currentId, setCurrentId }) => {
         };
     };
 
+    // Function called to clear the form data
     const clear = (e) => {
         e.preventDefault();
 

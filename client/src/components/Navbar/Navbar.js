@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Navbar/Navbar.js
+
+It constructs a React component to display the navbar and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AppBar, Typography, Toolbar, Button, Avatar } from '@material-ui/core';
@@ -8,29 +15,33 @@ import useStyles from './styles';
 import logo from '../../images/logos/cat.jpg';
 
 const Navbar = () => {
+    // Initialize state and React hooks
     const classes = useStyles();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
+    // Function that is called when User attempts to log out of their account
     const logout = useCallback(() => {
-        dispatch({ type: "LOGOUT" });
-        setUser(null);
+        dispatch({ type: "LOGOUT" }); // Dispatch action to redux
+        setUser(null); // Clear current User
 
-        navigate("/");
+        navigate("/"); // Navigate User back to Home page
     }, [dispatch, navigate]);
 
+    // Sets the current User if there is an authorization token present
     useEffect(() => {
+        // '?' modifier is to ensure no error is thrown in case user doesn't exist
         const token = user?.token;
 
         if (token) {
-            const decodedToken = decode(token);
+            const decodedToken = decode(token); // Verify token
 
-            if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+            if (decodedToken.exp * 1000 < new Date().getTime()) logout(); // Checks if token is expired
         };
 
-        setUser(JSON.parse(localStorage.getItem("profile")));
+        setUser(JSON.parse(localStorage.getItem("profile"))); // Sets the current User
     }, [location, user?.token, logout]);
 
     return (

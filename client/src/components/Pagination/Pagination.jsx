@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Pagination/Pagination.jsx
+
+It constructs a React component to display the page selector and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,10 +15,12 @@ import { getPhotos } from '../../actions/Photos';
 import useStyles from './styles';
 
 const Paginate = ({ page }) => {
+    // Initialize state and React hooks
     const { numberOfPages } = useSelector((state) => state.Photos);
     const classes = useStyles();
     const dispatch = useDispatch();
 
+    // Returns the proper set of photos, depending on the current page
     useEffect(() => {
         if (page) dispatch(getPhotos(page));
     }, [page]);

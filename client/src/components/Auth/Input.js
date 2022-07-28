@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Auth/Input.js
+
+It constructs a React component to display the hide/show password button.
+================================================== */
+
+// Import modules
 import React from 'react';
 import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';

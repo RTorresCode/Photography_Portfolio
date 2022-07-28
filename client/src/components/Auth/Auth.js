@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Auth/Auth.js
+
+It constructs a React component to display the sign in/sign up page and is responsible for stateful logic.
+================================================== */
+
+// Import modules
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +19,7 @@ import useStyles from './styles';
 const initialState = { firstName: "", lastName: "", email: "", password: "", confirmPassword: "" };
 
 const Auth = () => {
+    // Initialize states and React hooks
     const classes = useStyles();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -19,7 +27,7 @@ const Auth = () => {
     const [isSignup, setIsSignup] = useState(false);
     const [formData, setFormData] = useState(initialState);
 
-
+    // Function that is called when User submits the sign in/sign up form
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -30,14 +38,17 @@ const Auth = () => {
         };
     };
 
+    // Handles any changes in the input values
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    // Shows/hides User's currently entered password when pressed
     const handleShowPassword = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword);
     };
 
+    // Changes which form is currently being displayed(sign in vs. sign up)
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
         setShowPassword(false);

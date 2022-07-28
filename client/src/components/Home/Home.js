@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Home/Home.js
+
+It constructs a React component to display the home page and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -10,11 +17,13 @@ import Pagination from '../Pagination/Pagination';
 import { getPhotosBySearch } from '../../actions/Photos';
 import useStyles from './styles';
 
+// Extract query parameters from url
 function useQuery() {
     return new URLSearchParams(useLocation().search);
 };
 
 const Home = () => {
+    // Initialize states and React hooks
     const [currentId, setCurrentId] = useState(null);
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
@@ -26,21 +35,24 @@ const Home = () => {
     const page = query.get("page") || 1;
     const searchQuery = query.get("searchQuery");
 
-
+    // Function called when User presses enter after entering a tag in the tag search bar
     const handleKeyPress = (e) => {
         if (e.keyCode === 13) {
             searchPhoto();
         };
     };
 
+    // Function called when tags are being added to an already existing photo
     const handleAdd = (tag) => {
         setTags([...tags, tag]);
     };
 
+    // Function called when User wishes to delete a photo
     const handleDelete = (tagToDelete) => {
         setTags(tags.filter((tag) => tag !== tagToDelete));
     };
 
+    // Function called when someone attempts to query the photo database
     const searchPhoto = () => {
         if (search.trim() || tags) {
             dispatch(getPhotosBySearch({ search, tags: tags.join(",") }));

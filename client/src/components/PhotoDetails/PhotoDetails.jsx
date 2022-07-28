@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/PhotoDetails/PhotoDetails.jsx
+
+It constructs a React component to display the photo details page and is responsible for stateful logic and data fetching.
+================================================== */
+
+// Import modules
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -9,22 +16,27 @@ import { getPhoto, getPhotosBySearch } from '../../actions/Photos';
 import useStyles from './styles';
 
 const PhotoDetails = () => {
+    // Initialize state and React hooks
     const { photo, photos, isLoading } = useSelector((state) => state.Photos);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const classes = useStyles();
     const { id } = useParams();
-    
+
+    // Gets the current photo's database ID number
     useEffect(() => {
         dispatch(getPhoto(id));
     }, [id]);
 
+    // Queries the database based on User input
     useEffect(() => {
         dispatch(getPhotosBySearch({search: "none", tags: photo?.tags.join(",")}));
     }, [photo]);
 
+    // If no such photo exists in the database, return null
     if (!photo) return null;
 
+    // Display a circular progress bar if isLoading is true
     if (isLoading) {
         return (
             <Paper elevation={6} className={classes.loadingPaper}>
@@ -32,9 +44,11 @@ const PhotoDetails = () => {
             </Paper>
         );
     };
-    
+
+    // Filter photos in database by tag
     const recommendedPhotos = photos.filter(({ _id }) => _id !== photo._id);
-    
+
+    // If User clicks on a new photo's card, navigates User to that photo's details page
     const openPhoto = (_id) => {
         navigate(`/photos/${_id}`);
     };

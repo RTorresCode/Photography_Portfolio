@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Footer/Footer.js
+
+It constructs a React component to display the footer
+================================================== */
+
+// Import modules
 import React from 'react';
 //import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AppBar, Toolbar,  } from '@material-ui/core';

@@ -1,3 +1,10 @@
+/*==================================================
+/client/src/components/Socials/Socials.js
+
+It constructs a React component to display social media links.
+================================================== */
+
+// Import modules
 import React from 'react';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
