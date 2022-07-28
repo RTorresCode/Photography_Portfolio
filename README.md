@@ -5,6 +5,8 @@
 ## Created by Ramon Torres
 
 <br />
+This project was built using the MERN stack (MongoDB, Express.js, React.js, Node.js)
+
 
 ## How to Start
 <br />
@@ -27,10 +29,17 @@ Before attempting to run the backend server:
 - Ensure all required packages are installed by entering the command 'npm install' into the command line
 - Enter the command 'npm start' into the command line
 
-
 ### To begin running the backend server:
 
 - Navigate your local machine's console/terminal to the '/server' directory inside the project
 - Ensure all required packages are installed by entering the command 'npm install' into the command line
 - To run the dev version (initializes with nodemon), enter the command 'npm run dev' into the command line
 - To run the production version, enter the command 'npm start' into the command line
+
+<br />
+
+## Note on logging in/creating accounts
+
+- Due to client specifications, the login/registration page is not being linked to anywhere within the app
+- In order to reach this page, you must navigate to '/login' manually through the address bar (ex: photography-site.com/login)
+- Once an account has been made, there is no way to change any User account details, including passwords, so be sure to save your login information somewhere secure
