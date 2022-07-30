@@ -5,8 +5,8 @@
 ## Created by Ramon Torres
 
 <br />
-This project was built using the MERN stack (MongoDB, Express.js, React.js, Node.js)
-
+Photography portfolio website, with full search capabilities and pagination.<br />
+This project was built using the MERN stack. (MongoDB, Express.js, React.js, Node.js)<br />
 
 ## How to Start
 <br />
@@ -18,7 +18,7 @@ Before attempting to run the backend server:
 - Navigate into the '/server' directory inside the project
 - Open the file '.env.sample'
 - Put in your own values for PORT, MONGO_URL, and JWT_SECRET
-- Remove the '.sample' from the file name
+- Remove '.sample' from the file name
 - Save all changes
 
 ### \* ======================================= *
