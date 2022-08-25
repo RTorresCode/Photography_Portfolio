@@ -48,7 +48,7 @@ const Navbar = () => {
 
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
-            <img className={classes.heading} src={logo} alt="name" onClick={() => navigate("/")} />
+            <Typography className={classes.heading} variant="h1" alt="name" onClick={() => navigate("/")}>SV Photography</Typography>
             <CameraAltIcon className={classes.image} size="lg" alt="logo" onClick={() => navigate("/")} />
             {user ? (
                 <Toolbar className={classes.toolbar}>

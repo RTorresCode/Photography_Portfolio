@@ -12,8 +12,14 @@ export default makeStyles((theme) => ({
         padding: '10px 50px',
     },
     heading: {
+        fontFamily: "'Dancing Script', cursive",
+        color: '#b53d34',
         marginRight: '20px',
         cursor: 'pointer',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '50px',
+            textAlign: 'center',
+        },
     },
     image: {
         marginRight: 'auto',
