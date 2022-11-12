@@ -29,6 +29,10 @@ app.use(morgan('dev'));
 
 app.use('/api', apiRouter); // Import sub-routes and associated router functions
 
+app.get('/', (req, res) => {
+    res.send("APP IS RUNNING");
+});
+
 // Set up express application to use port 3005 as the access point for the server application
 // Connect to MongoDB database using MONGO_URL (set variable in .env file)
 const PORT = process.env.PORT || 3005; // PORT variable can be set in .env file
