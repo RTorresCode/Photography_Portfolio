@@ -13,7 +13,6 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 import useStyles from './styles';
-import logo from '../../images/logos/logo.jpg';
 
 const Navbar = () => {
 

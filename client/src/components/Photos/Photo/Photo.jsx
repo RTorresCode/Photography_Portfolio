@@ -65,7 +65,11 @@ const Photo = ({ photo, setCurrentId }) => {
             </ButtonBase>
             <CardActions className={classes.cardActions}>
                 {(user?.result?._id === photo?.creator) && (
-                    <Button size="small" color="secondary" onClick={handleDelete}>
+                    <Button size="small" color="secondary" onClick={(e) => {
+                        var choice = window.confirm("Are you sure you want to delete this photo?");
+                        if (choice === true) handleDelete();
+                        else e.preventDefault();
+                    }}>
                         <DeleteIcon size="small" />
                         Delete
                     </Button>
